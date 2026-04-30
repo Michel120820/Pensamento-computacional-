@@ -1,0 +1,35 @@
+Algoritmo Controle_Entrada_Sala
+
+Variáveis:
+    lista_oficial : Vetor de Nomes
+    aluno_atual : Texto
+    esta_na_lista : Lógico
+    ha_alunos_na_fila : Lógico
+
+Início
+
+    // Inicialização
+    ha_alunos_na_fila <- Verdadeiro 
+
+    Enquanto (ha_alunos_na_fila = Verdadeiro) Faça
+        Escreva("Digite o nome do aluno para verificação:")
+        Leia(aluno_atual)
+
+        // Verificação lógica
+        Se (aluno_atual pertence a lista_oficial) Então
+            Escreva("Acesso Permitido! Seja bem-vindo(a).")
+        Senão
+            Escreva("ERRO: Aluno não encontrado na lista oficial. Entrada Negada.")
+        FimSe
+
+        // Controle do laço de repetição
+        Escreva("Existe mais algum aluno na fila? (Sim/Não)")
+        Leia(resposta)
+        
+        Se (resposta = "Não") Então
+            ha_alunos_na_fila <- Falso
+        FimSe
+    FimEnquanto
+
+    Escreva("Processo finalizado. Todos os alunos da fila foram verificados.")
+Fim
